@@ -1,4 +1,5 @@
 var createError = require('http-errors');
+var compression = require('compression')
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
@@ -10,6 +11,7 @@ var addressRoute = require('./routes/addresses');
 var companyRoute = require('./routes/companies');
 
 var app = express();
+app.use(compression())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
